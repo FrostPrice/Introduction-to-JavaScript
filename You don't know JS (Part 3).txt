@@ -1,0 +1,95 @@
+----------------------------------------------------
+Wherever a var appears inside a scope, that declaration is taken to belong to the entire
+scope and accessible everywhere throughout.
+----------------------------------------------------
+Hoisting is when a var declaration is conceptually
+"moved" to the top of its enclosing scope.
+Ex:         var a = 2;
+                foo();              // works because `foo()`
+                                   // declaration is "hoisted"
+
+            function foo() {
+                a = 3;
+            
+                console.log( a );   // 3
+            
+                var a;              // declaration is "hoisted"
+                                    // to the top of `foo()`
+
+            }
+            
+            console.log( a );   // 2
+
+----------------------------------------------------
+When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes.
+Ex:             function foo() {
+            
+            var a = 1;
+
+            function bar() {
+                var b = 2;
+
+                function baz() {
+                    var c = 3;
+                    console.log( a, b, c ); // 1 2 3
+                }
+        
+                baz();
+        
+                console.log( a, b ); // 1 2
+        
+                }
+                bar();
+               
+                console.log( a ); // 1
+                }
+                foo();
+
+----------------------------------------------------
+Some conditionals. You'll find yourself using this series of if..else..if statements like this:
+	if (a == 2) {
+	// do something
+	}
+	else if (a == 10) {
+	// do another thing
+	}
+	else if (a == 42) {
+	// do yet another thing
+	}
+	else {
+	// fallback to here
+	}
+----------------------------------------------------
+The break make only one statement in one case to run.
+----------------------------------------------------
+Conditional operator:
+	var a = 42;
+	var b = (a > 41) ? "hello" : "world";
+		// similar to:
+		// if (a > 41) {
+		// b = "hello";
+		// }
+		// else {
+		// b = "world";
+		// }
+----------------------------------------------------
+The Strict Mode: tightens the rules for certain behaviors.
+Ex: function foo() {
+	"use strict";
+	// this code is strict mode
+	function bar() {
+	// this code is strict mode
+	}
+	}
+	// this code is not strict mode
+----------------------------------------------------
+A function itself can be a value that's assigned to variables, or passed to or returned from other functions.
+Ex:var foo = function() {
+	// ..
+	};
+	var x = function bar(){
+	// ..
+	}; 
+----------------------------------------------------
+Named function expressions are generally more preferable, though anonymous (no name) function expressions are still extremely common.
+----------------------------------------------------

@@ -1,0 +1,75 @@
+----------------------------------------------------
+There's another way to execute a function expression, which is typically referred to as an immediately invoked function expression (IIFE).
+Ex: 
+	(function IIFE(){
+	console.log( "Hello!" );
+	})();
+	// "Hello!"
+----------------------------------------------------
+The final () on the end of the expression -- the })(); line -- is what actually executes the function expression referenced immediately before it.
+----------------------------------------------------
+The similaritys between foo and IIEF:
+	function foo() { .. }
+	// `foo` function reference expression,
+	// then `()` executes it
+	foo();
+	// `IIFE` function expression,
+	// then `()` executes it
+	(function IIFE(){ .. })();
+----------------------------------------------------
+IIEF is often used to declare a variable that won't affect the surrouding code outside the IIEF.
+Ex: var a = 42;
+	(function IIFE(){
+	var a = 10;
+	console.log( a ); // 10
+	})();
+	console.log( a ); // 42
+----------------------------------------------------
+IIEF can also return values.
+Ex: var x = (function IIFE(){
+	return 42;
+	})();
+	x; // 42
+----------------------------------------------------
+You can think of closure as a way to "remember" and continue to access a function's scope even once the function has finished running.
+Ex: function makeAdder(x) {
+	// parameter `x` is an inner variable
+	// inner function `add()` uses `x`, so
+	// it has a "closure" over it
+	function add(y) {
+	return y + x;
+	};
+	return add;
+	}
+----------------------------------------------------
+makeAdder(..) is able to remember whatever "x" value was passed in to makeAdder(..).
+Ex: // `plusOne` gets a reference to the inner `add(..)`
+	// function with closure over the `x` parameter of
+	// the outer `makeAdder(..)`
+	var plusOne = makeAdder( 1 );
+	// `plusTen` gets a reference to the inner `add(..)`
+	// function with closure over the `x` parameter of
+	// the outer `makeAdder(..)`
+	var plusTen = makeAdder( 10 );
+	plusOne( 3 ); // 4 <-- 1 + 3
+	plusOne( 41 ); // 42 <-- 1 + 41
+	plusTen( 13 ); // 23 <-- 10 + 13
+----------------------------------------------------
+Modules let you define private implementation details (variables, functions) that are hidden from the outside
+world.
+Ex: function User(){
+	var username, password;
+	function doLogin(user,pw) {
+	username = user;
+	password = pw;
+	// do the rest of the login work
+	}
+	var publicAPI = {
+	login: doLogin
+	};
+	return publicAPI;
+	}
+	// create a `User` module instance
+	var fred = User();
+	fred.login( "fred", "12Battery34!" );
+----------------------------------------------------

@@ -1,0 +1,45 @@
+----------------------------------------------------
+You can copy an array:
+let arr = [1, 2, 3];
+let arrCopy = [...arr]; // spread the array into a list of parameters
+                        // then put the result into a new array
+
+// do the arrays have the same contents?
+alert(JSON.stringify(arr) === JSON.stringify(arrCopy)); // true
+
+// are the arrays equal?
+alert(arr === arrCopy); // false (not same reference)
+
+// modifying our initial array does not modify the copy:
+arr.push(4);
+alert(arr); // 1, 2, 3, 4
+alert(arrCopy); // 1, 2, 3
+----------------------------------------------------
+And the same thing can be done with an object:
+let obj = { a: 1, b: 2, c: 3 };
+let objCopy = { ...obj }; // spread the object into a list of parameters
+                          // then return the result in a new object
+
+// do the objects have the same contents?
+alert(JSON.stringify(obj) === JSON.stringify(objCopy)); // true
+
+// are the objects equal?
+alert(obj === objCopy); // false (not same reference)
+
+// modifying our initial object does not modify the copy:
+obj.d = 4;
+alert(JSON.stringify(obj)); // {"a":1,"b":2,"c":3,"d":4}
+alert(JSON.stringify(objCopy)); // {"a":1,"b":2,"c":3}
+----------------------------------------------------
+This way of copying an object is much shorter than let objCopy = Object.assign({}, obj); or for an array let arrCopy = Object.assign([], arr);
+----------------------------------------------------
+When we see "..." in the code, it is either rest parameters or the spread syntax.
+----------------------------------------------------
+There’s an easy way to distinguish between them:
+	When ... is at the end of function parameters, it’s “rest parameters” and gathers the rest of the list of arguments into an array.
+	When ... occurs in a function call or alike, it’s called a “spread syntax” and expands an array into a lis
+----------------------------------------------------
+Use patterns:
+	Rest parameters are used to create functions that accept any number of arguments.
+	The spread syntax is used to pass an array to functions that normally require a list of many arguments.
+----------------------------------------------------

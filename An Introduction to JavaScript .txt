@@ -1,0 +1,27 @@
+----------------------------------------------------
+JavaScript was initially created to “make web pages alive”.
+----------------------------------------------------
+The programs in this language are called scripts. They can be written right in a web page’s HTML and run automatically as the page loads.
+----------------------------------------------------
+The engine reads the script.
+Then it converts the script to the machine language.
+And then the machine code runs, pretty fast.
+----------------------------------------------------
+In-Browser Java Script can do:
+	Add new HTML to the page, change the existing content, modify styles.
+	React to user actions, run on mouse clicks, pointer movements, key presses.
+	Send requests over the network to remote servers, download and upload files.
+	Get and set cookies, ask questions to the visitor, show messages.
+	Remember the data on the client-side.
+----------------------------------------------------
+Unique JavaScript functions:
+	Full integration with HTML/CSS.
+	Simple things are done simply.
+	Support by all major browsers and enabled by default.
+----------------------------------------------------
+JavaScript was initially created as a browser-only language, but is now used in many other environments as well.
+----------------------------------------------------
+Today, JavaScript has a unique position as the most widely-adopted browser language with full integration with HTML/CSS.
+----------------------------------------------------
+There are many languages that get “transpiled” to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+----------------------------------------------------

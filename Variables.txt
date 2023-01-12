@@ -1,0 +1,64 @@
+----------------------------------------------------
+Variables:  is a “named storage” for data. We can use variables to store goodies, visitors, and other data.
+----------------------------------------------------
+To criate a variable, we use the keyword Let.
+Ex: let message;
+----------------------------------------------------
+And with the assigment operator =, you can put a data into it.
+Ex: let message;
+
+    message = 'Hello'; // store the string
+----------------------------------------------------
+Or you can:
+            let message = 'Hello!'; // define the variable and assign the value
+
+            alert(message); // Hello!
+----------------------------------------------------
+We can also declare multiple variables in one line.
+Ex: let user = 'John', age = 25, message = 'Hello';
+----------------------------------------------------
+But it's better this way:
+	let user = 'John';
+	let age = 25;
+	let message = 'Hello';
+----------------------------------------------------
+The Var keyword is almost the same as Let.
+----------------------------------------------------
+You can also have 2 variables and copy the data from one to another.
+Ex: let hello = 'Hello world!';
+
+let message;
+
+// copy 'Hello world' from hello into message
+message = hello;
+
+// now two variables hold the same data
+alert(hello); // Hello world!
+alert(message); // Hello world!
+----------------------------------------------------
+It's necessary to put the value between '' to set it as a text.
+Ex: let hello = 'Hello world!';
+----------------------------------------------------
+There are limitations on variable, like:
+	The name must contain only letters, digits, or the symbols $ and _.
+	The first character must not be a digit.
+Ex: let userName;
+    let test123;
+----------------------------------------------------
+If a word it's too long, you'll need to put the first letter of each word, capitalise.
+Ex: let myVeryLongName
+----------------------------------------------------
+These symbols can be used too, $ and _.
+Ex: let $ = 1; // declared a variable with the name "$"
+let _ = 2; // and now a variable with the name "_"
+
+alert($ + _); // 3
+----------------------------------------------------
+You can use + in the Alert, to activate the same more variable at the same time.
+Ex: alert(one + two); // 3
+----------------------------------------------------
+The words let, class, return, and function are reserved and cannot be used as a value.
+----------------------------------------------------
+To decalre un unchanging variable(They cannot change), use the variable Const. it works the same as a Let.
+Ex: const myBirthday = '18.04.1982'; 
+----------------------------------------------------

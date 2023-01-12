@@ -1,0 +1,74 @@
+----------------------------------------------------
+The following built-in types are available:
+	String
+	Number
+	Boolean
+	Null and undefined
+	Object
+	Symbol
+----------------------------------------------------
+typeof operator that can examine a value and tell you what type it is.
+Ex: var a;
+typeof a; // "undefined"
+a = "hello world";
+typeof a; // "string"
+----------------------------------------------------
+The object type refers to a compound value where you can set properties that each hold their own values of any type.
+Ex:let obj = {
+a: "hello world",
+b: 42,
+c: true
+----------------------------------------------------
+Properties can either be accessed with dot notation (obj.a ) or bracket notation ( obj["a"] ). Dot notation is shorter and generally easier to read, and is thus preferred when possible.
+Ex: obj.a is the same as obj["a"](This need to be between "" or '')
+----------------------------------------------------
+Bracket notation is useful if you have a property name that has special characters in it.
+Ex: obj ["Hello World!!!"];
+----------------------------------------------------
+An array is an object that holds values in numerically indexed positions.
+Ex: let {
+	"Hello World"
+	42
+	True
+};
+
+arr[0];
+arr[1];
+arr[2];
+arr.length;
+----------------------------------------------------
+Use 0 as the index of the first element in the array.
+----------------------------------------------------
+The best and most natural approach is to use arrays for numerically positioned values and use object s for named properties.
+----------------------------------------------------
+Functions are a subtype of objects.
+Ex: functions foo() {
+	return 42;
+};
+----------------------------------------------------
+Built-In types:
+	a.length;: returns the total lenth of the content.
+	a.toUpperCase();: Put everything in uppercase.
+	a.toFixed(4);: put the close number. 
+----------------------------------------------------
+When comparing a value it will return either a true or false boolean.
+----------------------------------------------------
+Explicit coercion is simply that you can see obviously from the code that a conversion from one type to another will occur, whereas implicit coercion is when the type conversion can happen as more of a non-obvious side effect of some other operation.
+----------------------------------------------------
+Exemple of explicit coercion:
+	var a = "42";
+	
+	var b = Number(a);
+
+	a;
+
+	b; 
+Exemple of implicity coercion:
+	var a = "42";
+
+	var b = a * 1; // "42" implicitly coerced to 42 here
+	
+	a; // "42"
+	
+	b; // 42 -- the number!
+----------------------------------------------------

@@ -1,0 +1,55 @@
+Media queries are useful when you want to modify your site or app depending on a device's general type (such as print vs. screen) or specific characteristics and parameters.
+----------------------------------------------------
+Media queries are used for the following:
+	To conditionally apply styles with the CSS @media and @import at-rules.
+	To target specific media for the <style>, <link>, <source>, and other HTML elements with the media= attribute.
+	To test and monitor media states using the Window.matchMedia() and MediaQueryList.addListener() JavaScript methods.
+----------------------------------------------------
+A media query computes to true when the media type (if specified) matches the device on which a document is being displayed and all media feature expressions compute as true. Queries involving unknown media types are always false.
+----------------------------------------------------
+Media types describe the general category of a device. Except when using the not or only logical operators, the media type is optional and the all type will be implied.
+
+All: Suitable for all devices.
+Print: Intended for paged material and documents viewed on a screen in print preview mode.
+Screen: Intended primarily for screens.
+Speech: Intended for speech synthesizers.
+----------------------------------------------------
+Media features describe specific characteristics of the user agent, output device, or environment.
+----------------------------------------------------
+Any-hover: Does any available input mechanism allow the user to hover over elements?
+Any-pointer: Is any available input mechanism a pointing device, and if so, how accurate is it?
+Aspect-ratio: Width-to-height aspect ratio of the viewport.
+Color: Number of bits per color component of the output device, or zero if the device isn't color
+Color-gamut: Approximate range of colors that are supported by the user agent and output device.
+Color-index: Number of entries in the output device's color lookup table, or zero if the device does not use such a table.
+Display-mode: The display mode of the application.
+Forced-colors: Detect whether user agent restricts color palette.
+Grid: Does the device use a grid or bitmap screen?
+Height: Height of the viewport.	
+Hover: Does the primary input mechanism allow the user to hover over elements?
+Inverted-colors: Is the user agent or underlying OS inverting colors?
+Light-level: Light level of the environment.
+Monochrome: Bits per pixel in the output device's monochrome frame buffer, or zero if the device isn't monochrome.
+Orientation: Orientation of the viewport.
+Overflow-block: How does the output device handle content that overflows the viewport along the block axis?
+Overflow-inline: Can content that overflows the viewport along the inline axis be scrolled?
+Pointer: Is the primary input mechanism a pointing device, and if so, how accurate is it?
+Prefers-color-scheme: Detect if the user prefers a light or dark color scheme.
+Prefers-contrast: Detects if the user has requested the system increase or decrease the amount of contrast between adjacent colors.
+Prefers-reduced-motion: The user prefers less motion on the page.
+Prefers-reduced-transparency: The user prefers reduced transparency.
+Resolution: Pixel density of the output device.	
+Scan: Scanning process of the output device.
+Scripting: Detects whether scripting (i.e. JavaScript) is available.
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------

@@ -1,0 +1,48 @@
+﻿----------------------------------------------------
+A value in JavaScript is always of a certain type. There are eight basic data types in JavaScript. 
+----------------------------------------------------
+We can put any type in a variable.
+Ex: // no error
+let message = "hello";
+message = 123456;
+----------------------------------------------------
+Number: The number type represents both integer and floating point numbers. There are many operations for numbers.
+----------------------------------------------------
+There are special numeric values which belong to th data type:
+	Infinity: represents the mathematical Infinity ∞. It is a special value 	that’s greater than any number.
+	Ex: alert( 1 / 0 ); // Infinity "get that result by dividing by zero" or alert( Infinity ); // Infinity
+
+	NaN: represents a computational error. It is a result of an incorrect or an undefined mathematical operation.
+	Ex: alert( "not a number" / 2 ); // NaN, such division is erroneous or alert( "not a number" / 2 + 5 ); // NaN
+
+	Also there is -Infinity, which is the same thing as the normal Infinity, but negative. 
+----------------------------------------------------
+BigInt type was recently added to the language to represent integers of arbitrary length (very large numbers).
+A BigInt value is created by appending n to the end of an integer.
+Ex: // the "n" at the end means it's a BigInt
+const bigInt = 1234567890123456789012345678901234567890n;
+----------------------------------------------------
+String ("",''`,``): There are 3 types of strings "", '', ``.
+	Double("") and single('') quotes are “simple” quotes. There is no such big diference between those.
+	Backticks are “extended functionality” quotes. They allow us to embed variables and expressions into a string by wrapping them in ${…}.
+Ex: let name = "John";
+
+// embed a variable
+alert( `Hello, ${name}!` ); // Hello, John!
+
+// embed an expression
+alert( `the result is ${1 + 2}` ); // the result is 3
+----------------------------------------------------
+The ${...}  is evaluated and the result becomes a part of the string. 
+We can put anything in there: a variable like name or an arithmetical expression like 1 + 2 or something more complex.
+it must use the backquotes, ``.
+----------------------------------------------------
+Boolean: it has only two values: true and false. True meaning "yes" and false "no".
+Ex: let nameFieldChecked = true; // yes, name field is checked
+let ageFieldChecked = false; // no, age field is not checked
+----------------------------------------------------
+They can also value as comparasions.
+Ex: let isGreater = 4 > 1;
+
+    alert( isGreater ); // true (the comparison result is "yes")
+----------------------------------------------------

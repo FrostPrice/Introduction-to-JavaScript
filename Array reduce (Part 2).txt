@@ -1,0 +1,37 @@
+----------------------------------------------------
+Exemple with Sum:
+let sum = [0, 1, 2, 3].reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue
+}, 0)
+// sum is 6
+----------------------------------------------------
+The values contained in an array of objects, you must supply an initialValue, so that each item passes through your function.
+Ex: let initialValue = 0
+let sum = [{x: 1}, {x: 2}, {x: 3}].reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue.x
+}, initialValue)
+
+console.log(sum) // logs 6
+----------------------------------------------------
+Flatten:
+let flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+  function(accumulator, currentValue) {
+    return accumulator.concat(currentValue)
+  },
+  []
+)
+// flattened is [0, 1, 2, 3, 4, 5]
+----------------------------------------------------
+Using Array.filter() then Array.map() traverses the array twice, but you can achieve the same effect while traversing only once with Array.reduce().
+Ex: const numbers = [-5, 6, 2, 0,];
+
+const doubledPositiveNumbers = numbers.reduce((accumulator, currentValue) => {
+  if (currentValue > 0) {
+    const doubled = currentValue * 2;
+    accumulator.push(doubled);
+  }
+  return accumulator;
+}, []);
+
+console.log(doubledPositiveNumbers); // [12, 4]
+----------------------------------------------------

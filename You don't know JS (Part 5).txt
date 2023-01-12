@@ -1,0 +1,46 @@
+----------------------------------------------------
+If a function has a this reference inside it, that this reference usually points to an object. But which object it points to depends on how the function was called.
+Ex: function foo() {
+	console.log( this.bar );
+	}
+	var bar = "global";
+	var obj1 = {
+	bar: "obj1",
+	foo: foo
+	};
+	var obj2 = {
+	bar: "obj2"
+	};
+	// --------
+	foo(); // "global"
+	obj1.foo(); // "obj1"
+	foo.call( obj2 ); // "obj2"
+	new foo(); // undefined
+----------------------------------------------------
+When you reference a property on an object, if that property doesn't exist, JavaScript will automatically use that object's internal prototype reference to find another object to look for the property on.
+Ex: var foo = {
+	a: 42
+	};
+	// create `bar` and link it to `foo`
+	var bar = Object.create( foo );
+	bar.b = "hello world";
+	bar.b; // "hello world"
+	bar.a; // 42 <-- delegated to `foo`
+----------------------------------------------------
+Plyfilling : is when you create a newer feature and produce a piece of code that is able to run in older JS environments.
+Ex: if (!Number.isNaN) {
+	Number.isNaN = function isNaN(x) {
+	return x !== x;
+	};
+	}
+----------------------------------------------------
+A utility called Number.isNaN(..) provide an accurate non-
+buggy check for NaN values, deprecating the original isNaN(..) utility.
+----------------------------------------------------
+Transpiling is a tool that converts your newer code into older code
+equivalents.
+Ex: function foo() {
+	var a = arguments[0] !== (void 0) ? arguments[0] : 2;
+	console.log( a );
+	}
+----------------------------------------------------

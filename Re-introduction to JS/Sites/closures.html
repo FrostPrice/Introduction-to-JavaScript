@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Closures</title>
+    
+        <script>
+           
+           function makeAdder(a) {
+            return function(b) {
+                return a + b;
+            };
+            }
+            var add5 = makeAdder(5);
+            var add20 = makeAdder(20);
+            add5(6); // returns 11
+            add20(7); // Returns 27
+
+        </script>
+    </head> 
+    <body>
+
+    </body>
+</html>

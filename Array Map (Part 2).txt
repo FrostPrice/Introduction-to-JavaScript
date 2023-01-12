@@ -1,0 +1,43 @@
+----------------------------------------------------
+The following code takes an array of numbers and creates a new array containing the square roots of the numbers in the first array:
+
+let numbers = [1, 4, 9]
+let roots = numbers.map(function(num) {
+    return Math.sqrt(num)
+})
+// roots is now     [1, 2, 3]
+// numbers is still [1, 4, 9]
+----------------------------------------------------
+This function will double the value:
+
+let numbers = [1, 4, 9]
+let doubles = numbers.map(function(num) {
+  return num * 2
+})
+
+// doubles is now   [2, 8, 18]
+// numbers is still [1, 4, 9]
+----------------------------------------------------
+QuerySelectorAll: returns a NodeList (which is a collection of objects).
+Ex: let elems = document.querySelectorAll('select option:checked')
+let values = Array.prototype.map.call(elems, function(obj) {
+  return obj.value
+})
+----------------------------------------------------
+ParseInt is often used with one argument, but takes two. The first is an expression and the second is the radix to the callback function, Array.prototype.map passes 3 arguments:
+	The element
+	The index
+	The array
+Ex: parseInt("1", 0)  // 1
+----------------------------------------------------
+Mapped Array undefined:
+let numbers = [1, 2, 3, 4]
+let filteredNumbers = numbers.map(function(num, index) {
+  if (index < 3) {
+     return num
+  }
+})
+// index goes from 0, so the filterNumbers are 1,2,3 and undefined.
+// filteredNumbers is [1, 2, 3, undefined]
+// numbers is still [1, 2, 3, 4]
+----------------------------------------------------

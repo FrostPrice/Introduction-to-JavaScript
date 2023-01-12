@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Functions</title>
+    
+        <script>
+            function add(x, y) {
+            var total = x + y;
+            return total;
+            }
+
+            add(); // NaN
+            // You can't perform addition on undefined
+
+
+            add(2, 3, 4); // 5
+            // added the first two; 4 was ignored
+
+            function add() {
+            var sum = 0;
+            for (var i = 0, j = arguments.length; i < j; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+            }
+
+            add(2, 3, 4, 5); // 14
+
+
+            function avg() {
+            var sum = 0;
+            for (var i = 0, j = arguments.length; i < j; i++) {
+                sum += arguments[i];
+            }
+            return sum / arguments.length;
+            }
+
+            avg(2, 3, 4, 5); // 3.5
+
+            function avg(...args) {
+            var sum = 0;
+            for (let value of args) {
+                sum += value;
+            }
+            return sum / args.length;
+            }
+
+            avg(2, 3, 4, 5); // 3.5
+
+
+            function avgArray(arr) {
+            var sum = 0;
+            for (var i = 0, j = arr.length; i < j; i++) {
+                sum += arr[i];
+            }
+            return sum / arr.length;
+            }
+
+            avgArray([2, 3, 4, 5]); // 3.5
+
+            
+            avg.apply(null, [2, 3, 4, 5]); // 3.5
+
+
+            var avg = function() {
+            var sum = 0;
+            for (var i = 0, j = arguments.length; i < j; i++) {
+                sum += arguments[i];
+            }
+            return sum / arguments.length;
+            };
+
+
+            var a = 1;
+            var b = 2;
+
+            (function() {
+            var b = 3;
+            a += b;
+            })();
+
+            a; // 4
+            b; // 2
+
+
+            function countChars(elm) {
+            if (elm.nodeType == 3) { // TEXT_NODE
+                return elm.nodeValue.length;
+            }
+            var count = 0;
+            for (var i = 0, child; child = elm.childNodes[i]; i++) {
+                count += countChars(child);
+            }
+            return count;
+            }
+
+
+            var charsInBody = (function counter(elm) {
+            if (elm.nodeType == 3) { // TEXT_NODE
+                return elm.nodeValue.length;
+            }
+            var count = 0;
+            for (var i = 0, child; child = elm.childNodes[i]; i++) {
+                count += counter(child);
+            }
+            return count;
+            })(document.body);
+
+            // Using Prototypes
+
+            var s = new Person('Simon', 'Willison');
+            s.firstNameCaps(); // TypeError on line 1: s.firstNameCaps is not a function
+
+            Person.prototype.firstNameCaps = function() {
+            return this.first.toUpperCase();
+            };
+            s.firstNameCaps(); // "SIMON"
+
+
+            // Built-in objects added to a Prototype
+
+            var s = 'Simon';
+            s.reversed(); // TypeError on line 1: s.reversed is not a function
+
+            String.prototype.reversed = function() {
+            var r = '';
+            for (var i = this.length - 1; i >= 0; i--) {
+                r += this[i];
+            }
+            return r;
+            };
+
+            s.reversed(); // nomiS
+
+
+            
+            
+            'This can now be reversed'.reversed(); // desrever eb won nac sihT
+
+            
+            
+            var s = new Person('Simon', 'Willison');
+            s.toString(); // [object Object]
+
+            Person.prototype.toString = function() {
+            return '<Person: ' + this.fullName() + '>';
+            }
+
+            s.toString(); // "<Person: Simon Willison>"
+
+
+
+
+
+                function lastNameCaps() {
+                return this.last.toUpperCase();
+                }
+                var s = new Person('Simon', 'Willison');
+                lastNameCaps.call(s);
+                // Is the same as:
+                s.lastNameCaps = lastNameCaps;
+                s.lastNameCaps(); // WILLISON
+        </script>
+    </head> 
+    <body>
+
+    </body>
+</html>

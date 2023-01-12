@@ -1,0 +1,8 @@
+----------------------------------------------------
+The most common non-JavaScript JavaScript you'll encounter is the DOM API.
+Ex: var el = document.getElementById( "foo" );
+----------------------------------------------------
+The document variable exists as a global variable when your code is running in a browser. It's not provided by the JS engine, nor is it particularly controlled by the JavaScript specification.
+----------------------------------------------------
+Alert(..) pops up a message box in the user's browser window.
+----------------------------------------------------

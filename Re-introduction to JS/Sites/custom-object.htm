@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Custom Objects</title>
+    
+        <script>
+           function makePerson(first, last) {
+            return {
+                first: first,
+                last: last
+            };
+            }
+            function personFullName(person) {
+            return person.first + ' ' + person.last;
+            }
+            function personFullNameReversed(person) {
+            return person.last + ', ' + person.first;
+            }
+
+            var s = makePerson('Simon', 'Willison');
+            personFullName(s); // "Simon Willison"
+            personFullNameReversed(s); // "Willison, Simon"
+
+                // Better this way
+
+            function makePerson(first, last) {
+            return {
+                first: first,
+                last: last,
+                fullName: function() {
+                return this.first + ' ' + this.last;
+                },
+                fullNameReversed: function() {
+                return this.last + ', ' + this.first;
+                }
+            };
+            }
+
+            var s = makePerson('Simon', 'Willison');
+            s.fullName(); // "Simon Willison"
+            s.fullNameReversed(); // "Willison, Simon"
+
+
+            // "This" mistake
+
+            var s = makePerson('Simon', 'Willison');
+            var fullName = s.fullName;
+            fullName(); // undefined undefined
+
+
+            // Best use of the value "This" 
+
+            function Person(first, last) {
+            this.first = first;
+            this.last = last;
+            this.fullName = function() {
+                return this.first + ' ' + this.last;
+            };
+            this.fullNameReversed = function() {
+                return this.last + ', ' + this.first;
+            };
+            }
+            var s = new Person('Simon', 'Willison');
+
+
+
+            function personFullName() {
+            return this.first + ' ' + this.last;
+            }
+            function personFullNameReversed() {
+            return this.last + ', ' + this.first;
+            }
+            function Person(first, last) {
+            this.first = first;
+            this.last = last;
+            this.fullName = personFullName;
+            this.fullNameReversed = personFullNameReversed;
+            }
+
+
+
+            function Person(first, last) {
+            this.first = first;
+            this.last = last;
+            }
+            Person.prototype.fullName = function() {
+            return this.first + ' ' + this.last;
+            };
+            Person.prototype.fullNameReversed = function() {
+            return this.last + ', ' + this.first;
+            };
+        </script>
+    </head> 
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <Title>Functions as values</Title>
+
+        <script>      
+            (function IIFE(){
+            console.log( "Hello!" );
+            })();
+            // "Hello!"
+
+            // foo and IIFE
+
+            function foo() { .. }
+            // `foo` function reference expression,
+            // then `()` executes it
+            foo();
+            // `IIFE` function expression,
+            // then `()` executes it
+	        (function IIFE(){ .. })();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,45 @@
+----------------------------------------------------
+JavaScript is full of situations where we need to write a small function that’s executed somewhere else. Like:
+	arr.forEach(func) – func is executed by forEach for every array item.
+	setTimeout(func) – func is executed by the built-in scheduler.
+----------------------------------------------------
+Arrow functions do not have this. If this is accessed, it is taken from the outside.
+Ex: let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    this.students.forEach(
+      student => alert(this.title + ': ' + student)
+    );
+  }
+};
+
+group.showList();
+----------------------------------------------------
+Arrow Functions are: =>, <=, etc.
+----------------------------------------------------
+Arrow functions also have no arguments variable.
+----------------------------------------------------
+You can delay some functions.
+Ex: function defer(f, ms) {
+  return function() {
+    setTimeout(() => f.apply(this, arguments), ms)
+  };
+}
+
+function sayHi(who) {
+  alert('Hello, ' + who);
+}
+
+let sayHiDeferred = defer(sayHi, 2000);
+sayHiDeferred("John"); // Hello, John after 2 seconds
+----------------------------------------------------
+Arrow functions:
+	Do not have this.
+	Do not have arguments.
+	Can’t be called with new.
+	They also don’t have super.
+----------------------------------------------------
+Also Arrows are meant for short pieces of code.
+----------------------------------------------------

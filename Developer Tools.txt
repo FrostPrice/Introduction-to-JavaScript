@@ -1,0 +1,12 @@
+----------------------------------------------------
+Developer Tools: allow us to see the error on the script, that we can1t see
+by looking on the page.
+----------------------------------------------------
+Right click/Inspect/Console... (or F12 opens the Developer Tools too)
+----------------------------------------------------
+Enter: Execute the code.
+----------------------------------------------------
+Shift+Enter: Adds a new line to the code.
+----------------------------------------------------
+Developer tools allow us to see errors, run commands, examine variables, and much more.
+----------------------------------------------------
